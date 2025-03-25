@@ -18,4 +18,4 @@
 | **선택 일정 삭제** | `DELETE` | `/schedules/{id}?password={password}` | 없음 | `200 OK` | `404 Not Found` |
 
 ### 📝 ERD
-![onealog](/assets/readme/easyme.png)   
+[![onealog](/assets/readme/easyme.png)  ](https://github.com/younseung-Lee/Spring_Schedule/issues/1#issue-2945894319) 
