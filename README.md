@@ -18,4 +18,4 @@
 | **선택 일정 삭제** | `DELETE` | `/schedules/{id}?password={password}` | 없음 | `200 OK` | `404 Not Found` |
 
 ### 📝 ERD
-[![onealog](/assets/readme/easyme.png)  ](https://github.com/younseung-Lee/Spring_Schedule/issues/1#issue-2945894319) 
+[[![onealog](/assets/readme/easyme.png)  ](https://github.com/younseung-Lee/Spring_Schedule/issues/1#issue-2945894319) ](https://private-user-images.githubusercontent.com/95355975/426459300-4a5ac365-29cd-4904-b87b-2b9a616223e8.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDI4OTU2OTEsIm5iZiI6MTc0Mjg5NTM5MSwicGF0aCI6Ii85NTM1NTk3NS80MjY0NTkzMDAtNGE1YWMzNjUtMjljZC00OTA0LWI4N2ItMmI5YTYxNjIyM2U4LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNTAzMjUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjUwMzI1VDA5MzYzMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTg5NTIxMDFkOTdkYWM5NjBiMzUyOTMyZWNhNDM1MThkZjJhNDA0Y2MzMzg0MzVkNmMyYjFiZjJiYTJhNzAyNDMmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.3DQpkPo0C665o6sIEdl8t_ZhwizXVW5upKwxoXilcvA)
