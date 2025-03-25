@@ -19,3 +19,19 @@
 
 ### 📝 ERD
 ![Image](https://github.com/user-attachments/assets/4a5ac365-29cd-4904-b87b-2b9a616223e8)
+
+### 📝 테이블 생성에 필요한 query
+```js
+use schedule;
+
+crate table schedule(
+    id         bigint auto_increment
+        primary key,
+    todo       varchar(100) not null,
+    username   varchar(20)  not null,
+    password   varchar(10)  null,
+    createtime datetime     null,
+    updatetime datetime     null
+);
+
+```
