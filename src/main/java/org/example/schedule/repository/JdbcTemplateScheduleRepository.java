@@ -53,7 +53,7 @@ public class JdbcTemplateScheduleRepository implements ScheduleRepository{
 
     @Override
     public List<ScheduleResponseDto> findAll() {
-        return jdbcTemplate.query("select * from schedule", scheduleRowMapper());
+        return jdbcTemplate.query("select * from schedule order by updatetime desc ", scheduleRowMapper());
     }
 
     @Override
@@ -97,6 +97,11 @@ public class JdbcTemplateScheduleRepository implements ScheduleRepository{
             }
         };
     }
+    /**
+     * rs.getString("createtime"),
+     * rs.getString("updatetime")
+     * 문제: createtime, updatetime은 TIMESTAMP 타입이므로, getTimestamp("createtime")을 사용하고 LocalDateTime으로 변환해야 함.
+     * **/
 
     private RowMapper<ScheduleResponseDto> scheduleRowMapper() {
         return new RowMapper<ScheduleResponseDto>() {
@@ -106,11 +111,6 @@ public class JdbcTemplateScheduleRepository implements ScheduleRepository{
                         rs.getLong("id"),
                         rs.getString("todo"),
                         rs.getString("username"),
-/**
- * rs.getString("createtime"),
- * rs.getString("updatetime")
- * 문제: createtime, updatetime은 TIMESTAMP 타입이므로, getTimestamp("createtime")을 사용하고 LocalDateTime으로 변환해야 함.
- * **/
                         rs.getTimestamp("createtime").toLocalDateTime(),
                         rs.getTimestamp("updatetime").toLocalDateTime()
                 );
