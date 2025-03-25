@@ -38,13 +38,14 @@ public class ScheduleController {
     }
     // 4. 선택한 일정 수정
     @PatchMapping("/{id}")
-    public ResponseEntity<ScheduleResponseDto> updateSchedule(@PathVariable Long id, @RequestBody ScheduleRequestDto dto){
-        return new ResponseEntity<>(scheduleService.updateSchedule(id, dto.getTodo(),dto.getUsername(),dto.getPassword()),HttpStatus.OK);
+    public ResponseEntity<ScheduleResponseDto> updateSchedule(@PathVariable Long id, @RequestBody ScheduleRequestDto dto) {
+        return new ResponseEntity<>(scheduleService.updateSchedule(id, dto), HttpStatus.OK);
     }
     // 5. 선택한 일정 삭제
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> delet(@PathVariable Long id){
-        scheduleService.delete(id);
+    // 비밀번호를 @RequestParam으로 받아서 서비스로 전달
+    public ResponseEntity<Void> delet(@PathVariable Long id, @RequestParam String password) {
+        scheduleService.delete(id, password);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

@@ -69,10 +69,10 @@ public class JdbcTemplateScheduleRepository implements ScheduleRepository{
     }
 
     @Override
-    public int updateSchedule(Long id, String todo, String username, String password) {
+    public int updateSchedule(Long id, String todo, String username, String password, LocalDateTime updatetime) {
         return jdbcTemplate.update(
-                "update schedule set todo=?, username=?, password=?, updatetime=? where id=?",
-                todo, username, password, Timestamp.valueOf(LocalDateTime.now()), id
+                "UPDATE schedule SET todo=?, username=?, password=?, updatetime=? WHERE id=?",
+                todo, username, password, Timestamp.valueOf(updatetime), id
         );
     }
 
@@ -89,14 +89,14 @@ public class JdbcTemplateScheduleRepository implements ScheduleRepository{
                         rs.getLong("id"),
                         rs.getString("todo"),
                         rs.getString("username"),
-//                        rs.getString("createtime"),
-//                        rs.getString("updatetime")
+                        rs.getString("password"), // 패스워드 추가
                         rs.getTimestamp("createtime").toLocalDateTime(),
                         rs.getTimestamp("updatetime").toLocalDateTime()
                 );
             }
         };
     }
+
     /**
      * rs.getString("createtime"),
      * rs.getString("updatetime")

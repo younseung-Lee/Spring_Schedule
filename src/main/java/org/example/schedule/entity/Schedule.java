@@ -26,10 +26,11 @@ public class Schedule {
         this.updatetime = this.createtime;  // 초기 생성 시 수정일 = 생성일
     }
 
-    public Schedule(long id, String todo, String username, LocalDateTime createtime, LocalDateTime updatetime) {
+    public Schedule(long id, String todo, String username, String password, LocalDateTime createtime, LocalDateTime updatetime) {
         this.id = id;
         this.todo = todo;
         this.username = username;
+        this.password = password;
         this.createtime = createtime;
         this.updatetime = updatetime;
     }
